@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+		"datecreate": "1970-01-01 00:00:00",
+		"datechange": "1970-01-01 00:00:00",
+		"content": "Здесь будет содержание записки 1",
+        "namepasient": "Иванов",
+		"date2": "2012/10/10",
+        "athor": "Петров",
+		"executor": "Сидоров",
+		"datedone": "1970-01-01 00:00:00",
+		"status": "В работе",
+		"color": "red", 
+		"corpus": "left",
+		"totalZapisok": "5"
+		
+     },
+	   {
+        "id": "2",
+		"datecreate": "1970-01-01 00:00:00",
+		"datechange": "null",
+		"content": "Здесь будет содержание записки 2",
+        "namepasient": "Иванов",
+		"date2": "2012/10/10",
+        "athor": "Петров",
+		"executor": "Сидоров",
+		"datedone": "1970-01-01 00:00:00",
+		"status": "Взята в работу",
+		"color": "red",
+		"corpus": "right",
+		"totalZapisok": "2"
+     },
+	    {
+        "id": "3",
+		"datecreate": "1970-01-01 00:00:00",
+		"datechange": "1970-01-01 00:00:00",
+		"content": "Здесь будет содержание записки 3",
+        "namepasient": "Иванов",
+		"date2": "2012/10/10",
+        "athor": "Петров",
+		"executor": "Сидоров",
+		"datedone": "1970-01-01 00:00:00",
+		"status": "Назначена",
+		"color": "green",
+		"corpus": "left",
+		"totalZapisok": "2"
+     }
+	  	
+ ]	  
+ 

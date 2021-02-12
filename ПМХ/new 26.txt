@@ -1,0 +1,66 @@
+import React from 'react';
+import axios from 'axios';
+//import MusicPlayer from './MusicPlayer';
+import { Card, Col, Row } from 'antd';
+import s from './FirstList.module.css';
+import { styleCard} from  './style/grids/gridsStyle.js';
+const { Meta } = Card;
+
+  class FirstList extends React.Component {
+    state = {
+        musicList: [],
+        currentSong: null,
+        music: "stopped"
+      };
+      componentDidMount() {
+      axios.get(`https://avdeevaelena.github.io/json/pmx.json`)
+      .then(res => {
+        const musicList = res.data;
+        this.setState({ musicList });
+      }) 
+      }
+
+       render() {    
+        let info = this.state.musicList.map(it => it.title);
+        let picture = this.state.musicList.map(it => it.url);
+        const playList = this.state.musicList.map(song => {
+          return (  
+             <Card  style={styleCard}  title={song.title} bordered={true}>
+               <img  className={s.mainPhoto} alt={song.title} src={song.url} />
+               <Meta  style={styleCard} title={song.title} description={song.title}  />
+               </Card>
+          );
+        });
+        const style = { background: '#0092ff', padding: '8px 0' };
+        return (
+          <div>
+            <div >
+            <h1 > ПМХ </h1> 
+            </div>
+            <div > 
+            <Col span={8}>
+                {playList}
+            </Col>
+            </div>
+            <Row gutter={16}>
+      <Col className="gutter-row" span={6}>
+        <div style={style}>col-6</div>
+      </Col>
+      <Col className="gutter-row" span={6}>
+        <div style={style}>col-6</div>
+      </Col>
+      <Col className="gutter-row" span={6}>
+        <div style={style}>col-6</div>
+      </Col>
+      <Col className="gutter-row" span={6}>
+        <div style={style}>col-6</div>
+      </Col>
+    </Row>
+            <div >
+                    <p> Панель управления  </p> 
+            </div>
+          </div>
+        )
+  }
+}
+export default FirstList;
